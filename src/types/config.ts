@@ -7,6 +7,12 @@ export type SiteConfig = {
         url: string;
     };
 
+    mirrorSite?: {
+        enabled: boolean;
+        url: string;
+        region?: string;
+    }
+
     favicon: string;
 }
 

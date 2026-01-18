@@ -13,6 +13,12 @@ export const siteConfig: SiteConfig = {
         url: "assets/background.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
     },
 
+    mirrorSite: {
+        enabled: true, // If mirrorSite is enabled, this will alart the user to visit the mirror site if user is in region below
+        url: "www.motues.top", 
+        region: "CN" // Region of the mirror site, 
+    },
+
     favicon: "/favicon/favicon.ico" // Path of the favicon, relative to the /public directory
 }
 

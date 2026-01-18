@@ -1,0 +1,151 @@
+---
+import { siteConfig } from "@/config";
+
+const domesticDomain = siteConfig.mirrorSite?.url;
+const region = siteConfig.mirrorSite?.region;
+---
+
+<div id="ip-redirect-modal" class="modal-overlay hidden">
+  <div class="glass-card">
+    <div class="content-wrapper">
+      <h2>🌍 访问提示</h2>
+      <p>检测到您在中国地区，建议前往国内镜像站点以获得更快的加载速度。</p>
+      
+      <button id="redirect-btn" class="glass-button">
+        {domesticDomain}
+      </button>
+      <button id="close-btn" class="transparent-button">
+        我知道了
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+    
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .glass-card {
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 24px;
+    padding: 40px;
+    width: min(90vw, 450px);
+    /* max-width: 450px; */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    text-align: center;
+  }
+
+  h2 { margin-top: 0; color: #222; font-size: 1.5rem; }
+  p { color: #444; line-height: 1.6; margin-bottom: 2rem; }
+
+  .glass-button {
+    display: block;
+    width: 100%;
+    height: 48px;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .glass-button:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .transparent-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 48px;
+    padding: 0 20px;
+    margin: 8px auto 0;
+    background: transparent;
+    color: #666;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .transparent-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #333;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  }
+</style>
+
+<script is:inline define:vars={{ domesticDomain, region }}>
+  async function checkIP() {
+    // 1. 新增判断：如果当前域名已经是目标域名，直接退出，不执行检测
+    if (window.location.hostname === domesticDomain) {
+      return;
+    }
+
+    try {
+      // 2. 调用 IP 检测接口
+      const response = await fetch('https://ipapi.co/json/'); // 使用支持 HTTPS 的接口
+      const data = await response.json();
+
+      // 3. 判断是否在中国 (CN)
+      if (data.country_code === region || data.country === region) {
+        const modal = document.getElementById('ip-redirect-modal');
+        const redirectBtn = document.getElementById('redirect-btn');
+        const closeBtn = document.getElementById('close-btn');
+
+        if (modal) {
+          modal.classList.remove('hidden');
+        }
+
+        if (redirectBtn) {
+          redirectBtn.onclick = () => {
+            // 4. 跳转并保持路径和参数
+            const currentPath = window.location.pathname + window.location.search;
+            window.location.href = `https://${domesticDomain}${currentPath}`;
+          };
+        }
+        
+        if (closeBtn) {
+          closeBtn.onclick = () => {
+            // 关闭模态框
+            modal.classList.add('hidden');
+          };
+        }
+      }
+    } catch (err) {
+      console.warn('IP check skipped or failed:', err);
+    }
+  }
+
+  checkIP();
+</script>
