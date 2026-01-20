@@ -98,5 +98,12 @@ export const labConfig : LabConfig = [
         description: "A storage service",
         url: "https://openlist.motues.top",
         icon: "assets/icons/openlist.svg",
+    },
+    {
+        name: "Umani",
+        description: "A website analytics platform",
+        url: "https://umani.motues.top",
+        icon: "simple-icons:umami",
+        color: "#000000"
     }
 ]
