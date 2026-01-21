@@ -25,10 +25,12 @@ const backgroundImageUrl = url(siteConfig.backgroundImage.url);
     <ClientRouter />
     <script defer src="https://umami.motues.top/script.js" data-website-id="8193e658-a951-40c0-88a6-d5d1d1f0d892" is:inline></script>
 </head>
-<body style={backgroundImageEnabled ? `background-image: url(${backgroundImageUrl})` : ''}>
+<body class="layout-body">
     { siteConfig.mirrorSite?.enabled && <SiteNavi /> }
     <ThemeIcon />
-    <slot />
+    <main class="main-content">
+        <slot />
+    </main>
     <Footer />
 </body>
 
@@ -87,7 +89,18 @@ const backgroundImageUrl = url(siteConfig.backgroundImage.url);
     --color-shadow: rgba(255, 255, 255, 0.1);
 }
 
- html, body { 
+.layout-body { 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.main-content { 
+    flex: 1;
+}
+
+html, body { 
     margin: 0;
     padding: 0;
 }
