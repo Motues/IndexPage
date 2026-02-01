@@ -100,9 +100,9 @@ export const labConfig : LabConfig = [
         icon: "assets/icons/openlist.svg",
     },
     {
-        name: "Umani",
+        name: "Umami",
         description: "A website analytics platform",
-        url: "https://umani.motues.top",
+        url: "https://umami.motues.top",
         icon: "simple-icons:umami",
         color: "#000000"
     }
