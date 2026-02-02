@@ -20,7 +20,7 @@ const backgroundImageUrl = url(siteConfig.backgroundImage.url);
     <link rel="icon" href={url(siteConfig.favicon)} type="image/x-icon">
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps"> -->
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Delius"> -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <title>{pageTitle}</title>
     <ClientRouter />
     <script defer src="https://umami.motues.top/script.js" data-website-id="afbdd312-b8ce-4ee9-a161-bd32b3d09366" is:inline></script>
@@ -38,13 +38,13 @@ const backgroundImageUrl = url(siteConfig.backgroundImage.url);
 
 
 <style is:global define:vars={{}}>
-@font-face {
+/* @font-face {
   font-family: 'Comic Sans MS';
   src: url('/fonts/ComicSansMS.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 /* @font-face {
   font-family: 'Comic Sans MS';
@@ -110,8 +110,8 @@ html {
 }
 
 body {
-    font-family: 'Comic Sans MS', 'Comic Neue';
-    /* font-weight: bold; */
+    font-family: 'Comic Neue';
+    font-weight: bold;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
