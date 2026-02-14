@@ -105,5 +105,10 @@ export const labConfig : LabConfig = [
         url: "https://umami.motues.top",
         icon: "simple-icons:umami",
         color: "#000000"
+    },{
+        name: "RSSHub",
+        description: "Everything is RSSible",
+        url: "https://rsshub.motues.top",
+        icon: "assets/icons/rsshub.svg",
     }
 ]
