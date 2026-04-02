@@ -87,11 +87,10 @@ export const labConfig : LabConfig = [
         color: "#9fa1a1ff"
     },
     {
-        name: "ScriptRepo",
-        description: "A repository for storing and sharing scripts",
-        url: "https://script.motues.top",
-        icon: "fa6-solid:code",
-        color: "#4ba2ca"
+        name: "Uptime Kuma",
+        description: "A fancy self-hosted monitoring tool",
+        url: "https://uptime.motues.top/status/website",
+        icon: "assets/icons/uptime-kuma.svg",
     },
     {
         name: "Server",
