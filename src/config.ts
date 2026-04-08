@@ -93,6 +93,13 @@ export const labConfig : LabConfig = [
         icon: "assets/icons/uptime-kuma.svg",
     },
     {
+        name: "Meting API",
+        description: "A powerful music API ",
+        url: "https://meting.motues.top/",
+        icon: "fa6-solid:paperclip",
+        color: "#ffcf27"
+    },
+    {
         name: "Server",
         description: "A server monitor",
         url: "https://server.motues.top",
