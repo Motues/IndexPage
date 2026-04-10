@@ -15,7 +15,7 @@ export const siteConfig: SiteConfig = {
 
     mirrorSite: {
         enabled: true, // If mirrorSite is enabled, this will alart the user to visit the mirror site if user is in region below
-        url: "www.motues.top", 
+        url: "www.motues.top",
         region: "CN" // Region of the mirror site, 
     },
 
@@ -26,7 +26,7 @@ export const profileConfig: ProfileConfig = {
     avatar: "assets/Motues.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
     name: "Motues",
     description: "Like River!",
-    introPage: "https://motues.top",
+    introPage: "https://www.motues.top",
     links: [
         /* -------------------------------- Icon -------------------------------- */
         // Visit https://icones.js.org/ for icon codes

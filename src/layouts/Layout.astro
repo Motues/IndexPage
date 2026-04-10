@@ -1,5 +1,5 @@
 ---
-import { siteConfig } from '@/config';
+import { siteConfig, profileConfig } from '@/config';
 import { url } from '@utils/url-utils';
 import ThemeIcon from '@components/control/ThemeIcon.astro';
 import SiteNavi from '@components/control/SiteNavi.astro';
@@ -15,8 +15,30 @@ const backgroundImageUrl = url(siteConfig.backgroundImage.url);
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    <script is:inline>
+        (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        let theme;
+        if ( savedTheme === 'system') {
+          theme = systemTheme;
+        } else {
+          theme = savedTheme || 'light';
+        }
+        localStorage.setItem('theme', savedTheme || theme);
+        document.documentElement.setAttribute('data-theme', theme);
+
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content={`${profileConfig.description}. This is a ${profileConfig.name} site, which is built with Astro.`}>
+    <meta name="author" content={profileConfig.name}>
     <link rel="icon" href={url(siteConfig.favicon)} type="image/x-icon">
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps"> -->
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Delius"> -->
