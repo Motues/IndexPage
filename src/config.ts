@@ -80,6 +80,13 @@ export const profileConfig: ProfileConfig = {
 export const labConfig : LabConfig = [
     // Icon and color rules are same as profileConfig
     {
+        name: "Public API",
+        description: "A public API for everyone",
+        url: "https://open.motues.top/",
+        icon: "fa6-solid:paperclip",
+        color: "#ffcf27"
+    },
+    {
         name: "BlockBoard",
         description: "A real-time online block board",
         url: "https://blockboard.motues.top",
@@ -93,35 +100,10 @@ export const labConfig : LabConfig = [
         icon: "assets/icons/uptime-kuma.svg",
     },
     {
-        name: "Meting API",
-        description: "A powerful music API ",
-        url: "https://meting.motues.top/",
-        icon: "fa6-solid:paperclip",
-        color: "#ffcf27"
-    },
-    {
         name: "Server",
         description: "A server monitor",
         url: "https://server.motues.top",
         icon: "svg-spinners:bars-scale",
         color: "#50b8e9ff"
     },
-    {
-        name: "OpenList",
-        description: "A storage service",
-        url: "https://openlist.motues.top",
-        icon: "assets/icons/openlist.svg",
-    },
-    {
-        name: "Umami",
-        description: "A website analytics platform",
-        url: "https://umami.motues.top",
-        icon: "simple-icons:umami",
-        color: "#000000"
-    },{
-        name: "RSSHub",
-        description: "Everything is RSSible",
-        url: "https://rsshub.motues.top",
-        icon: "assets/icons/rsshub.svg",
-    }
 ]
