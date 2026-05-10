@@ -94,10 +94,10 @@ export const labConfig : LabConfig = [
         color: "#9fa1a1ff"
     },
     {
-        name: "Uptime Kuma",
+        name: "Status Page",
         description: "A fancy self-hosted monitoring tool",
-        url: "https://uptime.motues.top/status/website",
-        icon: "assets/icons/uptime-kuma.svg",
+        url: "https://status.motues.top",
+        icon: "assets/icons/lumipulse.svg",
     },
     {
         name: "Server",
