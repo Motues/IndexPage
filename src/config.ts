@@ -99,11 +99,4 @@ export const labConfig : LabConfig = [
         url: "https://status.motues.top",
         icon: "assets/icons/lumipulse.svg",
     },
-    {
-        name: "Server",
-        description: "A server monitor",
-        url: "https://server.motues.top",
-        icon: "svg-spinners:bars-scale",
-        color: "#50b8e9ff"
-    },
 ]
