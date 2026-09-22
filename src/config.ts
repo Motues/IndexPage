@@ -90,8 +90,7 @@ export const labConfig : LabConfig = [
         name: "BlockBoard",
         description: "A real-time online block board",
         url: "https://blockboard.motues.top",
-        icon: "svg-spinners:blocks-wave", 
-        color: "#9fa1a1ff"
+        icon: "assets/icons/blockboard.svg", 
     },
     {
         name: "Status Page",
