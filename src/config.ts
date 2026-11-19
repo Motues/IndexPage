@@ -45,11 +45,17 @@ export const profileConfig: ProfileConfig = {
           color: "#0dbc79",
         },
         {
-            name: "Note",
-            url: "https://note.motues.top",
-            icon: "fa6-solid:book",
-            color: "#b4a992",
+          name: "Gallery",
+          url: "https://gallery.motues.top",
+          icon: "fa6-solid:paper-plane", 
+          color: "#e2b269",
         },
+        // {
+        //     name: "Note",
+        //     url: "https://note.motues.top",
+        //     icon: "fa6-solid:book",
+        //     color: "#b4a992",
+        // },
         {
             name: "Lab",
             url: "/lab",
